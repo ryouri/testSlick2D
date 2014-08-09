@@ -21,12 +21,12 @@ public class Battle extends BasicGameState {
 
 	World world;
 	KeyInput keyInput;
-	
+
 	StateBasedGame stateGame;
-	
+
 	//TODO: Musicクラスの利用
 	Music music;
-	
+
 	public Battle(int state) {
 		this.state = state;
 	}
@@ -39,7 +39,7 @@ public class Battle extends BasicGameState {
 
 		//TODO: Musicクラスの利用
 		try {
-			music = new Music("music/kirby.ogg");
+			music = new Music("music/tw045_convert.ogg");
 		} catch (SlickException e) {
 			e.printStackTrace();
 		}
@@ -63,20 +63,20 @@ public class Battle extends BasicGameState {
 		world.update(keyInput);
 		keyInput.spaceKeyUpdate();
 	}
-	
+
 	public void changeStateTitle() {
 		stateGame.enterState(State.TITLE, new FadeOutTransition(Color.black,
 				500), new FadeInTransition(Color.black, 500));
 	}
-	
+
 	@Override
 	public void keyPressed(int key, char c) {
 		super.keyPressed(key, c);
 		keyInput.keyPressed(key, c);
 	}
-	
-	
-	
+
+
+
 	@Override
 	public void keyReleased(int key, char c) {
 		super.keyReleased(key, c);
@@ -106,7 +106,7 @@ public class Battle extends BasicGameState {
 		//今回で言えば，Battleクラスが持つWorldクラスに，
 		//Battleクラスの参照を渡しておき，
 		//MusicChangeメソッドなどを作成し，呼び出させるという方法がある．
-		
+
 		//他にも，ShootingGameクラスなどのStateBasedGameクラスに音楽管理クラスを
 		//持たせ，そこで管理するという方法もある．
 	}
