@@ -8,6 +8,7 @@ import org.newdawn.slick.Graphics;
 */
 public class MyBullet extends GameObject
 {
+	//New Comment on commite
 	/**
 	 * コンストラクタ
 	 */
@@ -15,7 +16,7 @@ public class MyBullet extends GameObject
 	{
 		active = false;
 	}
-	
+
 	/**
 	 * ステップ毎処理
 	 */
@@ -28,7 +29,7 @@ public class MyBullet extends GameObject
 			active = false;
 		}
 	}
-	
+
 	/**
 	 * 描画処理。
 	 * １ループで一回呼ばれる。
@@ -39,7 +40,7 @@ public class MyBullet extends GameObject
 		g.setColor(Color.gray);
 		g.drawRect((int)x-3, (int)y-10, (int)6, (int)20);
 	}
-	
+
 	//初期化処理もここで行う（オブジェクトを使い回しているので）
 	public void activate(double ix, double iy)
 	{
