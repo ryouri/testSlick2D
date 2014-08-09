@@ -91,17 +91,22 @@ public class Bullet extends GameObject
 	{
 		for (int i = 0; i < 360; i += 60 )
 		{
-			ObjectPool.newBullet(x, y, i, 3);
+			ObjectPool.newBullet(x, y, i, 4);
 		}
+	}
+	
+	public static void FireMissile(double x, double y)
+	{
+			ObjectPool.newBullet(x, y,  180*(Math.random()), 4);		////
 	}
 
 	//プレイヤーの位置に向けて3way弾を撃つ
 	public static void FireAim(double x, double y, Player player)
 	{
 		double degree = Math.toDegrees(Math.atan2(player.y - y, player.x - x));
-		ObjectPool.newBullet(x, y, degree, 4);
-		ObjectPool.newBullet(x, y, degree+20, 4);
-		ObjectPool.newBullet(x, y, degree-20, 4);
+		ObjectPool.newBullet(x, y, degree+(Math.random()-0.5)*10,10);
+		ObjectPool.newBullet(x, y, degree+25, 4);
+		ObjectPool.newBullet(x, y, degree-25, 4);
 	}
 }
 

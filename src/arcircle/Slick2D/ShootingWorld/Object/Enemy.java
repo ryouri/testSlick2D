@@ -56,7 +56,7 @@ public class Enemy extends GameObject
 		x = ix;
 		y = iy;
 		//ランダムに出現する敵を決める
-		type = (int)(Math.random()+0.5);
+		type = (int)(2*Math.random()+0.5);
 		//弾のインスタンスを有効にする
 		active = true;
 		//体力
@@ -118,6 +118,9 @@ public class Enemy extends GameObject
 			case 1:
 				move_enemy1();
 				break;
+			case 2:
+				move_enemy2();
+				break;
 			default:
 		}
 	}
@@ -177,6 +180,26 @@ public class Enemy extends GameObject
 				Bullet.FireAim(x, y, player);
 				shootNum--;
 			}
+		}
+	}
+	
+	void move_enemy2()
+	{
+		counter++;
+		y++;
+		//ゆらゆら
+		x += Math.sin(y / 40);
+
+		//画面外に出たら消去
+		if ( (500 < y) )
+		{
+			active = false;
+		}
+
+		//一定間隔で弾を撃つ
+		if ((counter%20)==0)
+		{
+			Bullet.FireMissile(x, y);
 		}
 	}
 
