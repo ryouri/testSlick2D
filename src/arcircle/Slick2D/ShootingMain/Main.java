@@ -7,6 +7,9 @@ import org.newdawn.slick.SlickException;
 public class Main {
 
 	public static void main(String[] args) {
+
+        System.out.println("HelloWorld");
+
         //エントリーポイント
         AppGameContainer app;
         try{
