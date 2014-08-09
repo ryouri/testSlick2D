@@ -12,7 +12,7 @@ public class Player extends GameObject
 {
 	//プレイヤーのスピード
     double speed;
-    
+
     //TODO:Soundの利用
     Sound shotSound;
     Sound deathSound;
@@ -33,8 +33,8 @@ public class Player extends GameObject
 	    //TODO:Soundの利用
 		//本来は効果音管理クラスを作ったほうが良い
 		try {
-			shotSound = new Sound("sound/shot.ogg");
-			deathSound = new Sound("sound/explosion.ogg");
+			shotSound = new Sound("sound/se_maoudamashii_battle_gun02.ogg");
+			deathSound = new Sound("sound/se_maoudamashii_explosion04.ogg");
 		} catch (SlickException e) {
 			e.printStackTrace();
 		}
