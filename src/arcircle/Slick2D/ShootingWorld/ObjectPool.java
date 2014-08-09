@@ -256,6 +256,8 @@ public class ObjectPool
 		{
 			player.shot();
 			newMyBullets(player.x, player.y);
+			newMyBullets(player.x+10, player.y);
+			newMyBullets(player.x-10, player.y);
 		}
 	}
 

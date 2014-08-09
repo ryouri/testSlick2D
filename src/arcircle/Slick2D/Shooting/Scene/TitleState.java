@@ -62,7 +62,6 @@ public class TitleState extends BasicGameState {
 			sbg.enterState(State.BATTLE, new EmptyTransition(),
 					new SelectTransition());
 		}
-
 		count++;
 	}
 
